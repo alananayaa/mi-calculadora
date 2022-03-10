@@ -1,24 +1,478 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20036.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20018.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mi_Calculadora" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.20000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="zA5-vm-NYw">
+                                <rect key="frame" x="20" y="92" width="728" height="179.5"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="150"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v0M-xy-htO" appends="YES" id="tKi-en-hHd"/>
+                                </connections>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LEr-bL-bXf">
+                                <rect key="frame" x="6" y="311.5" width="756" height="707.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zHz-ST-XFs">
+                                        <rect key="frame" x="0.0" y="0.0" width="756" height="133.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VAq-va-rpS" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="181.5" height="133.5"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="AC">
+                                                            <attributes>
+                                                                <font key="NSFont" metaFont="system" size="85"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <buttonConfiguration key="configuration" style="plain" title="AC" titleAlignment="center">
+                                                    <fontDescription key="titleFontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="85"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="clearResult:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZVp-lT-hNc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iW-6G-5Tp" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="191.5" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="+/-">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="85"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="16"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aDf-dx-elf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRh-x7-CKy" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="383" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="%">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="85"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="17"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="calcOperations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RTS-l3-x0G"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVg-we-e4T" userLabel="/" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="574.5" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" image="Division"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="11"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="calcOperations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xep-2z-hgA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EP8-C7-Xw0">
+                                        <rect key="frame" x="0.0" y="143.5" width="756" height="133.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LC-ec-Oc9" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="1">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K2b-dW-mda"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="htn-5I-FNh" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="191.5" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="2">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PXN-bR-fNN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPn-9x-e9K" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="383" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="3">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BRd-bM-OP0"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ObN-wN-733" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="574.5" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="X">
+                                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="70"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="12"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="calcOperations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K8P-zM-9kX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a2y-CK-Evz">
+                                        <rect key="frame" x="0.0" y="287" width="756" height="133.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VS-Hk-kH9" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="4">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ssr-S0-VAI"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xte-UD-WQG" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="191.5" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="5">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="00V-Yc-NOr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T27-eZ-mdW" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="383" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="6">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="6"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jp6-em-2eo"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pAY-mZ-E3R" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="574.5" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="-">
+                                                    <fontDescription key="titleFontDescription" type="system" weight="medium" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="13"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="calcOperations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RHz-HI-Rpn"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="wYj-Ln-hoL">
+                                        <rect key="frame" x="0.0" y="430.5" width="756" height="133.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vZS-zE-qQd" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="7">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="7"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A3u-XY-fTh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aqw-s2-ZMF" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="191.5" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="8">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="8"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Abs-gA-Xc8"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eiJ-dQ-N3s" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="383" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="9">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="9"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5Zr-4b-pzn"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1G-8U-JJW" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="574.5" y="0.0" width="181.5" height="133.5"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="+">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="14"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="calcOperations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SPL-Ju-QIA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="C4I-XX-Gpa">
+                                        <rect key="frame" x="0.0" y="574" width="756" height="133.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRC-IJ-jg2" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="0">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wKd-bl-C8B"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDz-Q0-deL" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="384" y="0.0" width="181.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title=".">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="inputNumbers:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H8M-Mx-Mxg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsN-Wj-jZK" customClass="CalcButton" customModule="Mi_Calculadora" customModuleProvider="target">
+                                                <rect key="frame" x="575.5" y="0.0" width="180.5" height="133.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="=">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="100"/>
+                                                </buttonConfiguration>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="calcOperations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xVe-c2-utE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YRC-IJ-jg2" firstAttribute="width" secondItem="LEr-bL-bXf" secondAttribute="width" multiplier="0.495" id="Nk9-lV-JQG"/>
+                                    <constraint firstItem="CDz-Q0-deL" firstAttribute="width" secondItem="eiJ-dQ-N3s" secondAttribute="width" id="pif-jX-sAK"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="LEr-bL-bXf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6" id="1fL-0o-LTA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zA5-vm-NYw" secondAttribute="trailing" constant="20" id="Fjt-UH-Uye"/>
+                            <constraint firstItem="LEr-bL-bXf" firstAttribute="top" secondItem="zA5-vm-NYw" secondAttribute="bottom" constant="40" id="LDX-tj-AZ2"/>
+                            <constraint firstItem="zA5-vm-NYw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aIw-xe-gzL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LEr-bL-bXf" secondAttribute="trailing" constant="6" id="n61-eg-dtH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LEr-bL-bXf" secondAttribute="bottom" constant="5" id="vzR-gM-HvF"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="clearButton" destination="VAq-va-rpS" id="0RA-bJ-b7K"/>
+                        <outlet property="result" destination="zA5-vm-NYw" id="GUs-uV-0h6"/>
+                        <outletCollection property="operationSelected" destination="XVg-we-e4T" collectionClass="NSMutableArray" id="O6P-Au-bnv"/>
+                        <outletCollection property="operationSelected" destination="ObN-wN-733" collectionClass="NSMutableArray" id="fvi-UG-K4r"/>
+                        <outletCollection property="operationSelected" destination="pAY-mZ-E3R" collectionClass="NSMutableArray" id="7qI-Yg-e5F"/>
+                        <outletCollection property="operationSelected" destination="U1G-8U-JJW" collectionClass="NSMutableArray" id="wIy-um-ppl"/>
+                        <outletCollection property="operationSelected" destination="BsN-Wj-jZK" collectionClass="NSMutableArray" id="JF0-iQ-wCr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="v0M-xy-htO">
+                    <connections>
+                        <action selector="deleteText:" destination="BYZ-38-t0r" id="aZY-ag-WAc"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="20" y="93.888888888888886"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="3LC-ec-Oc9">
+            <size key="intrinsicContentSize" width="68.5" height="133.5"/>
+        </designable>
+        <designable name="5iW-6G-5Tp">
+            <size key="intrinsicContentSize" width="136" height="115.5"/>
+        </designable>
+        <designable name="6VS-Hk-kH9">
+            <size key="intrinsicContentSize" width="84.5" height="133.5"/>
+        </designable>
+        <designable name="Aqw-s2-ZMF">
+            <size key="intrinsicContentSize" width="84" height="133.5"/>
+        </designable>
+        <designable name="BsN-Wj-jZK">
+            <size key="intrinsicContentSize" width="84.5" height="133.5"/>
+        </designable>
+        <designable name="CDz-Q0-deL">
+            <size key="intrinsicContentSize" width="45.5" height="133.5"/>
+        </designable>
+        <designable name="ObN-wN-733">
+            <size key="intrinsicContentSize" width="72.5" height="98"/>
+        </designable>
+        <designable name="SPn-9x-e9K">
+            <size key="intrinsicContentSize" width="83.5" height="133.5"/>
+        </designable>
+        <designable name="T27-eZ-mdW">
+            <size key="intrinsicContentSize" width="86" height="133.5"/>
+        </designable>
+        <designable name="U1G-8U-JJW">
+            <size key="intrinsicContentSize" width="84.5" height="133.5"/>
+        </designable>
+        <designable name="VAq-va-rpS">
+            <size key="intrinsicContentSize" width="135" height="115.5"/>
+        </designable>
+        <designable name="XVg-we-e4T">
+            <size key="intrinsicContentSize" width="83" height="70"/>
+        </designable>
+        <designable name="Xte-UD-WQG">
+            <size key="intrinsicContentSize" width="82.5" height="133.5"/>
+        </designable>
+        <designable name="YRC-IJ-jg2">
+            <size key="intrinsicContentSize" width="85" height="133.5"/>
+        </designable>
+        <designable name="eiJ-dQ-N3s">
+            <size key="intrinsicContentSize" width="86" height="133.5"/>
+        </designable>
+        <designable name="htn-5I-FNh">
+            <size key="intrinsicContentSize" width="81" height="133.5"/>
+        </designable>
+        <designable name="jRh-x7-CKy">
+            <size key="intrinsicContentSize" width="93" height="115.5"/>
+        </designable>
+        <designable name="pAY-mZ-E3R">
+            <size key="intrinsicContentSize" width="67.5" height="133.5"/>
+        </designable>
+        <designable name="vZS-zE-qQd">
+            <size key="intrinsicContentSize" width="79" height="133.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="Division" width="59" height="56"/>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
