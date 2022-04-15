@@ -29,22 +29,31 @@ import UIKit.UIButton
     internal func loadStyle() {
         switch styleButton {
             case .gray:
-                layer.backgroundColor = CGColor.calcGray
+                layer.backgroundColor = .calcGray
+                layer.borderColor = .white
+                tintColor = UIColor(red: 84/255, green: 84/255, blue: 84/255, alpha: 1)
+                
             case .white:
-                layer.backgroundColor = CGColor.calcWhite
+                layer.backgroundColor = .white
+                layer.borderColor = .borderGray
                 tintColor = UIColor(red: 105/255, green: 105/255, blue: 105/255, alpha: 1.0)
-            case .yellow:
-                layer.backgroundColor = CGColor.calcYellow
+                
+            case .black:
+                layer.backgroundColor = .calcBlack
+                layer.borderColor = .borderBlack
+                
             case .activeOperation:
-                layer.backgroundColor = CGColor(red: 122/255, green: 10/255, blue: 10/255, alpha: 1.0)
+                layer.backgroundColor = CGColor.calcRed
+                layer.borderColor = CGColor.borderRed
+                
         }
         
         if styleButton != .white {
             tintColor = .white
         }
         layer.cornerRadius = 25
-        layer.shadowColor = .white
-        layer.shadowOffset = CGSize(width: 3, height: 3)
+        layer.shadowColor = .black
+        layer.shadowOffset = CGSize(width: 4, height: 4)
         layer.shadowRadius = 4
         layer.shadowOpacity = 0.6
     }

@@ -10,6 +10,6 @@ import Foundation
 enum CalcButtonStyle: Int {
     case gray = 1
     case white = 2
-    case yellow = 3
+    case black = 3
     case activeOperation = 4
 }
