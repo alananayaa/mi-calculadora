@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var result: UILabel!
     @IBAction func inputNumbers(_ sender: UIButton) {
         if result.text == "0" {
-            clearButton.titleLabel?.text = "AC"
+            clearButton.imageView?.image = UIImage(named: "AC")
         }
         if sender.tag == 16 {
             if negativeSymbolActive {
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
                         if !decimalPointActive {
                             result.text? += "."
                             decimalPointActive = true
-                            clearButton.titleLabel?.text = " C"
+                            clearButton.imageView?.image = UIImage(named: "C")
                         }
                         
                     default:
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
                             newOperation = false
                         }
                         result.text? += "\(sender.tag)"
-                        clearButton.titleLabel?.text = " C"
+                        clearButton.imageView?.image = UIImage(named: "C")
                 }
             }
             
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     
     @IBAction func clearResult(_ sender: UIButton) {
         result.text = "0"
-        clearButton.titleLabel?.text = "AC"
+        clearButton.imageView?.image = UIImage(named: "AC")
         decimalPointActive = false
         activeOperation = nil
         tempResult = 0.0

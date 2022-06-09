@@ -13,9 +13,9 @@
 		E73530F727C1A22100C4D033 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73530F527C1A22100C4D033 /* Main.storyboard */; };
 		E73530F927C1A22200C4D033 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E73530F827C1A22200C4D033 /* Assets.xcassets */; };
 		E73530FC27C1A22200C4D033 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E73530FA27C1A22200C4D033 /* LaunchScreen.storyboard */; };
-		E735310427C1B45D00C4D033 /* CalcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735310327C1B45D00C4D033 /* CalcButton.swift */; };
 		E735310827C1B6C200C4D033 /* CalcButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735310727C1B6C200C4D033 /* CalcButtonStyle.swift */; };
 		E735310B27C1B9EE00C4D033 /* CGColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E735310A27C1B9EE00C4D033 /* CGColorExtension.swift */; };
+		E78F9016284AD799000191D4 /* CalcButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78F9015284AD799000191D4 /* CalcButton.swift */; };
 		E7CEE4E127C2EC0700B4C8DC /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CEE4E027C2EC0700B4C8DC /* Operations.swift */; };
 		E7CEE4E327C310AE00B4C8DC /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CEE4E227C310AE00B4C8DC /* DoubleExtension.swift */; };
 /* End PBXBuildFile section */
@@ -29,9 +29,9 @@
 		E73530F827C1A22200C4D033 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E73530FB27C1A22200C4D033 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E73530FD27C1A22200C4D033 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E735310327C1B45D00C4D033 /* CalcButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcButton.swift; sourceTree = "<group>"; };
 		E735310727C1B6C200C4D033 /* CalcButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcButtonStyle.swift; sourceTree = "<group>"; };
 		E735310A27C1B9EE00C4D033 /* CGColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGColorExtension.swift; sourceTree = "<group>"; };
+		E78F9015284AD799000191D4 /* CalcButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalcButton.swift; sourceTree = "<group>"; };
 		E7CEE4E027C2EC0700B4C8DC /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		E7CEE4E227C310AE00B4C8DC /* DoubleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +91,7 @@
 		E735310627C1B6A000C4D033 /* CalcButton */ = {
 			isa = PBXGroup;
 			children = (
-				E735310327C1B45D00C4D033 /* CalcButton.swift */,
+				E78F9015284AD799000191D4 /* CalcButton.swift */,
 				E735310727C1B6C200C4D033 /* CalcButtonStyle.swift */,
 			);
 			path = CalcButton;
@@ -179,11 +179,11 @@
 			files = (
 				E7CEE4E327C310AE00B4C8DC /* DoubleExtension.swift in Sources */,
 				E73530F427C1A22100C4D033 /* ViewController.swift in Sources */,
+				E78F9016284AD799000191D4 /* CalcButton.swift in Sources */,
 				E735310B27C1B9EE00C4D033 /* CGColorExtension.swift in Sources */,
 				E73530F027C1A22100C4D033 /* AppDelegate.swift in Sources */,
 				E7CEE4E127C2EC0700B4C8DC /* Operations.swift in Sources */,
 				E735310827C1B6C200C4D033 /* CalcButtonStyle.swift in Sources */,
-				E735310427C1B45D00C4D033 /* CalcButton.swift in Sources */,
 				E73530F227C1A22100C4D033 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,7 +339,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -369,7 +368,6 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;

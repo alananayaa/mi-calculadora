@@ -8,8 +8,8 @@
 import Foundation
 
 enum CalcButtonStyle: Int {
-    case gray = 1
+    case numeral = 1
     case white = 2
-    case black = 3
+    case inactiveOperation = 3
     case activeOperation = 4
 }
